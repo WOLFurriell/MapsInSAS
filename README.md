@@ -1,4 +1,4 @@
-# Building a simple mapa in SAS
+# Building a simple map in SAS
 
 To make a map in SAS you need a shapefile, this file has the spatial coordinates to plot the map respecting the actual proportions of the space. 
 In this case used the IBGE APONDs(Areas of Weighting) shapefile of the cities of Maringá, Sarandi and Paiçandu. You can download this shapes here:[IBGE shapefiles](https://downloads.ibge.gov.br/downloads_geociencias.htm).
