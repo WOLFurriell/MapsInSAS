@@ -71,10 +71,42 @@ value cut_educ
 run;
 ```
 
-
 ```sas
+
+/*RESOLUÇÃO*/
+goptions xpixels=1024 ypixels=768 gunit=pct;
+*CORES PARA O MAPA (from ... http://colorbrewer2.org/);
+pattern1 v=ms c=cxffffb2; 
+pattern2 v=ms c=cxfecc5c;
+pattern3 v=ms c=cxfd8d3c;
+pattern4 v=ms c=cxf03b20;
+pattern5 v=ms c=cxbd0026;
+
+/*CRIANDO UMA MACRO PARA AS VARIÁVEIS*/
+%macro plot_map(variavel=, nome_var=,formatar=);
+/*LEGENDA PARA O MAPA*/
+ods pdf file="C:\Users\Furriel\Box Sync\MULHERES_NEGRAS\Resultados\&variavel..pdf" startpage= yes;
+options orientation=landscape;
+legend1 mode=share origin=(5,60) across=1 shape=bar(4,4)pct
+label=(position=top "&nome_var");
+/*PLOT DO MAPA*/
+proc gmap all data=shape_mulheres map=shape_mulheres annotate=delimitacao;
+	id Apond;
+	choro &variavel/annotate=maplabel discrete coutline=white legend=legend1;
+	format &variavel &formatar;
+run;
+quit;
+ODS pdf close;
+%mend plot_map;
+%plot_map(variavel=pretaME,nome_var=Média de salário das mulheres negras,formatar=cut_salario.);
+%plot_map(variavel=brancaME,nome_var=Média de salário das mulheres brancas,formatar=cut_salario.);
+%plot_map(variavel=pretaP,nome_var=Porcentagem de mulheres negras com ensino superior,formatar=cut_educ.);
+%plot_map(variavel=brancaP,nome_var=Porcentagem de mulheres brancas com ensino superior,formatar=cut_educ.);
 ```
 
+<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/ContingencyPlot/blob/master/genre2018.jpeg">
 
-```sas
-```
+You can see the script wihtout comments here [script](https://github.com/WOLFurriell/ContingencyPlot/blob/master/imdb_plot.R)
+
+
+
