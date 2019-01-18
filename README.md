@@ -104,9 +104,9 @@ ODS pdf close;
 %plot_map(variavel=brancaP,nome_var=Porcentagem de mulheres brancas com ensino superior,formatar=cut_educ.);
 ```
 
-<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherEDU.png">
+<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherEDU2.png">
 
-<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherME.png">
+<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherME2.png">
 
 You can see the script wihtout comments here [script](https://github.com/WOLFurriell/MapsInSAS/blob/master/Cartogramas_mulheres.sas)
 
