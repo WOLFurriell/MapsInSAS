@@ -104,9 +104,11 @@ ODS pdf close;
 %plot_map(variavel=brancaP,nome_var=Porcentagem de mulheres brancas com ensino superior,formatar=cut_educ.);
 ```
 
-<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/ContingencyPlot/blob/master/genre2018.jpeg">
+<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherME.pdf">
 
-You can see the script wihtout comments here [script](https://github.com/WOLFurriell/ContingencyPlot/blob/master/imdb_plot.R)
+<img align="center" width="800" height="400" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherP.pdf">
+
+You can see the script wihtout comments here [script](https://github.com/WOLFurriell/MapsInSAS/blob/master/Cartogramas_mulheres.sas)
 
 
 
