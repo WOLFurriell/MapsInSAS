@@ -70,17 +70,18 @@ value cut_educ
 .101 - high = "10,1% ou mais";
 run;
 ```
+The final step is to plot the map, first of all it is necessary to configure some parameters like resolution and colors. For color I use a website [colorbrewer2] (http://colorbrewer2.org/) which shows some color palettes applied to maps.
+As I wanted to plot maps for different populations and variables I built a macro with these input parameters.To create the maps was used the proc gmap, in the parameters data and map I put the shapefile with the data of the women, in annotate I used the dataset with the delimitations of the cities. The parameter id represents the intra-city boundaries, referring to the Aponds.
 
 ```sas
-
 /*RESOLUÇÃO*/
 goptions xpixels=1024 ypixels=768 gunit=pct;
 *CORES PARA O MAPA (from ... http://colorbrewer2.org/);
-pattern1 v=ms c=cxffffb2; 
-pattern2 v=ms c=cxfecc5c;
-pattern3 v=ms c=cxfd8d3c;
-pattern4 v=ms c=cxf03b20;
-pattern5 v=ms c=cxbd0026;
+pattern1 v = ms c = cxffffb2; 
+pattern2 v = ms c = cxfecc5c;
+pattern3 v = ms c = cxfd8d3c;
+pattern4 v = ms c = cxf03b20;
+pattern5 v = ms c = cxbd0026;
 
 /*CRIANDO UMA MACRO PARA AS VARIÁVEIS*/
 %macro plot_map(variavel=, nome_var=,formatar=);
@@ -88,20 +89,22 @@ pattern5 v=ms c=cxbd0026;
 ods pdf file="C:\Users\Furriel\Box Sync\MULHERES_NEGRAS\Resultados\&variavel..pdf" startpage= yes;
 options orientation=landscape;
 legend1 mode=share origin=(5,60) across=1 shape=bar(4,4)pct
-label=(position=top "&nome_var");
+label = (position=top "&nome_var");
+
 /*PLOT DO MAPA*/
-proc gmap all data=shape_mulheres map=shape_mulheres annotate=delimitacao;
+proc gmap all data = shape_mulheres map = shape_mulheres annotate = delimitacao;
 	id Apond;
-	choro &variavel/annotate=maplabel discrete coutline=white legend=legend1;
+	choro &variavel/annotate = maplabel discrete coutline = white legend = legend1;
 	format &variavel &formatar;
 run;
 quit;
+
 ODS pdf close;
 %mend plot_map;
-%plot_map(variavel=pretaME,nome_var=Média de salário das mulheres negras,formatar=cut_salario.);
-%plot_map(variavel=brancaME,nome_var=Média de salário das mulheres brancas,formatar=cut_salario.);
-%plot_map(variavel=pretaP,nome_var=Porcentagem de mulheres negras com ensino superior,formatar=cut_educ.);
-%plot_map(variavel=brancaP,nome_var=Porcentagem de mulheres brancas com ensino superior,formatar=cut_educ.);
+
+%plot_map(variavel = brancaME, nome_var = Média de salário das mulheres brancas, formatar = cut_salario.);
+
+%plot_map(variavel  =brancaP, nome_var = Porcentagem de mulheres brancas com ensino superior, formatar = cut_educ.);
 ```
 
 <img align="center" width="800" height="600" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherEDU2.png">
