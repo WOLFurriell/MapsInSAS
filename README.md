@@ -70,7 +70,7 @@ value cut_educ
 .101 - high = "10,1% ou mais";
 run;
 ```
-The final step is to plot the map, first of all it is necessary to configure some parameters like resolution and colors. For color I use a website [colorbrewer2] (http://colorbrewer2.org/) which shows some color palettes applied to maps.
+The final step is to plot the map, first of all it is necessary to configure some parameters like resolution and colors. For color I use a website [colorbrewer2](http://colorbrewer2.org/) which shows some color palettes applied to maps.
 As I wanted to plot maps for different populations and variables I built a macro with these input parameters.To create the maps was used the proc gmap, in the parameters data and map I put the shapefile with the data of the women, in annotate I used the dataset with the delimitations of the cities. The parameter id represents the intra-city boundaries, referring to the Aponds.
 
 ```sas
