@@ -107,8 +107,12 @@ ODS pdf close;
 %plot_map(variavel  =brancaP, nome_var = Porcentagem de mulheres brancas com ensino superior, formatar = cut_educ.);
 ```
 
+And finally we can see the maps. They are simple maps, but very informative.
+
+The distribution of women with high education, in Maringá, Sarandi and Paiçandu.
 <img align="center" width="800" height="600" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherEDU2.png">
 
+The distribution of average income of women, in Maringá, Sarandi and Paiçandu.
 <img align="center" width="800" height="600" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherME2.png">
 
 You can see the script wihtout comments here [script](https://github.com/WOLFurriell/MapsInSAS/blob/master/Cartogramas_mulheres.sas)
