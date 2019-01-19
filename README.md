@@ -109,10 +109,10 @@ ODS pdf close;
 
 And finally we can see the maps. They are simple maps, but very informative.
 
-The distribution of women with high education, in Maringá, Sarandi and Paiçandu.
+The distribution of white women with high education, in Maringá, Sarandi and Paiçandu.
 <img align="center" width="800" height="600" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherEDU2.png">
 
-The distribution of average income of women, in Maringá, Sarandi and Paiçandu.
+The distribution of average income of white women, in Maringá, Sarandi and Paiçandu.
 <img align="center" width="800" height="600" src="https://github.com/WOLFurriell/MapsInSAS/blob/master/MulherME2.png">
 
 You can see the script wihtout comments here [script](https://github.com/WOLFurriell/MapsInSAS/blob/master/Cartogramas_mulheres.sas)
